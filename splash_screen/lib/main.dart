@@ -4,7 +4,8 @@ void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.blue,
+        // 원하는 색상 코드 #335CB0
+        backgroundColor: Color(0xFF335CB0),
         body: Image.asset('asset/img/logo.png'),
       ),
     ),
