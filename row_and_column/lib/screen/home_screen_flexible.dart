@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:row_and_column/const/colors.dart';
 
 class HomeScreenFlexible extends StatelessWidget {
   const HomeScreenFlexible({super.key});
