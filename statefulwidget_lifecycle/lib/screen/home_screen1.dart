@@ -37,15 +37,51 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class CodeFactoryWidget extends StatelessWidget {
-  const CodeFactoryWidget({super.key});
+class CodeFactoryWidget extends StatefulWidget {
+  CodeFactoryWidget({super.key}) {
+    print('1) StatefuleWidget Construtor');
+  }
+
+  @override
+  State<CodeFactoryWidget> createState() {
+    print('2) StatefuleWidget Create State');
+    return _CodeFactoryWidgetState();
+  }
+}
+
+class _CodeFactoryWidgetState extends State<CodeFactoryWidget> {
+  @override
+  void initState() {
+    print('3) StatefulWidget initState');
+    super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    print('4) StatefulWidget didChangeDependencies');
+    super.didChangeDependencies();
+  }
 
   @override
   Widget build(BuildContext context) {
+    print('5) StatefulWidget build');
+
     return Container(
       color: Colors.red,
       width: 50.0,
       height: 50.0,
     );
+  }
+
+  @override
+  void deactivate() {
+    print('6) StatefulWidget deactivate');
+    super.deactivate();
+  }
+
+  @override
+  void dispose() {
+    print('7) StatefulWidget dispose');
+    super.dispose();
   }
 }
