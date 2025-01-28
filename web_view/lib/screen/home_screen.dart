@@ -4,7 +4,9 @@ import 'package:webview_flutter/webview_flutter.dart';
 final homeUrl = Uri.parse('https://blog.codefactory.ai');
 
 class HomeScreen extends StatelessWidget {
-  WebViewController controller = WebViewController()..loadRequest(homeUrl);
+  WebViewController controller = WebViewController()
+    ..setJavaScriptMode(JavaScriptMode.unrestricted)
+    ..loadRequest(homeUrl);
 
   HomeScreen({super.key});
 
@@ -17,12 +19,10 @@ class HomeScreen extends StatelessWidget {
         centerTitle: true,
         actions: [
           IconButton(
-            onPressed: (){
+            onPressed: () {
               controller.loadRequest(homeUrl);
             },
-            icon: Icon(
-              Icons.home
-            ),
+            icon: Icon(Icons.home),
           ),
         ],
       ),
