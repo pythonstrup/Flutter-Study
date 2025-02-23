@@ -7,8 +7,15 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Image.asset(
-          'assets/img/image_1.jpeg',
+        child: PageView(
+          children: [1, 2, 3, 4, 5]
+              .map(
+                (number) => Image.asset(
+                  'assets/img/image_${number}.jpeg',
+                  fit: BoxFit.cover,
+                ),
+              )
+              .toList(),
         ),
       ),
     );
